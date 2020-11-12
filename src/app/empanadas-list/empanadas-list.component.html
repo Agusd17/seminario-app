@@ -1,21 +1,31 @@
-<h1>Lista de empanadas</h1>
-<table class="table">
-    <thead>
-        <tr>
-            <th>Imagen</th>
-            <th>Variedad</th>
-            <th>Ingredientes</th>
-            <th>Precio</th>
-            <th>Stock</th>
-        </tr>
-    </thead>
-    <tbody *ngFor="let empanada of empanadas" [ngClass]="{'sale': empanada.sale, 'no-stock': empanada.stock == 0}">
-        <tr>
-            <td><img [src]="empanada.image" [alt]="empanada.name"></td>
-            <td>{{empanada.name | uppercase}}</td>
-            <td>{{empanada.style}}</td>
-            <td>{{empanada.price | currency}}</td>
-            <td><span *ngIf="empanada.stock==0" class="badge badge-warning">No hay stock actualmente</span></td>
-        </tr>
-    </tbody>
-</table>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+          
+          <h1>Lista de empanadas</h1>
+          <table class="table">
+              <thead>
+                  <tr>
+                      <th>Imagen</th>
+                      <th>Variedad</th>
+                      <th>Ingredientes</th>
+                      <th>Precio</th>
+                      <th>Stock</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let empanada of empanadas" [ngClass]="{'sale': empanada.sale, 'no-stock': empanada.stock == 0}">
+                    <tr>
+                        <td><img [src]="empanada.image" [alt]="empanada.name" class="portrait-img"></td>
+                        <td>{{empanada.name | uppercase}}</td>
+                        <td>{{empanada.style}}</td>
+                        <td>{{empanada.price | currency}}</td>
+                        <td><span *ngIf="empanada.stock==0" class="badge badge-warning">No hay stock actualmente</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-3 well">
+          <app-carrito></app-carrito>
+        </div>
+    </div>
+</div>
