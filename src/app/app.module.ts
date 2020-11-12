@@ -5,8 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmpanadasListComponent } from './empanadas-list/empanadas-list.component';
 import { AboutComponent } from './about/about.component';
-import { CartManagerService } from './cart-manager.service';
 import { CarritoComponent } from './empanadas-list/carrito/carrito.component';
+import { StockManagerService } from './stock-manager.service';
+import { CartManagerService } from './cart-manager.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { CarritoComponent } from './empanadas-list/carrito/carrito.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [CartManagerService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

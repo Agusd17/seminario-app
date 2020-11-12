@@ -20,6 +20,7 @@
                         <td>{{empanada.style}}</td>
                         <td>{{empanada.price | currency}}</td>
                         <td><span *ngIf="empanada.stock==0" class="badge badge-warning">No hay stock actualmente</span></td>
+                        <td><span *ngIf="empanada.stock > 0" >Manejadores de stock</span></td>
                     </tr>
                 </tbody>
             </table>
