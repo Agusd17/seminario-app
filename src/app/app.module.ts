@@ -8,17 +8,21 @@ import { AboutComponent } from './about/about.component';
 import { CarritoComponent } from './empanadas-list/carrito/carrito.component';
 import { StockManagerService } from './stock-manager.service';
 import { CartManagerService } from './cart-manager.service';
+import { InputCartComponent } from './input-cart/input-cart.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmpanadasListComponent,
     AboutComponent,
-    CarritoComponent
+    CarritoComponent,
+    InputCartComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

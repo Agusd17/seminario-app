@@ -1,0 +1,9 @@
+<div class="input-group">
+    <div class="input-group-prepend">
+        <button class="btn btn-primary btn-sm" (click)="downQuant(empanada)">-</button>
+    </div>
+    <input type="text" class="text-center" [(ngModel)]="empanada.quantity" (keyup)="chngQuant($event, empanada)">
+    <div class="input-group-prepend">
+        <button class="btn btn-primary btn-sm" (click)="upQuant(empanada)">+</button>
+    </div>
+</div>

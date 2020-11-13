@@ -1,1 +1,19 @@
-<p>here's carritou</p>
+<div *ngIf="noCartFlag; else cartTable">HOluuuuu</div>
+<ng-template #cartTable>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Variedad</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let empanada of carrito">
+            <tr>
+                <td>{{empanada.name | uppercase}}</td>
+                <td>{{empanada.stock}}</td>
+                <td>{{empanada.price | currency}}</td>
+            </tr>
+        </tbody>
+    </table>
+</ng-template>

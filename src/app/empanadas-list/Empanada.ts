@@ -5,5 +5,6 @@ export interface Empanada {
     price: number;
     stock: number;
     sale: boolean;
+    quantity: number;
   } 
   

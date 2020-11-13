@@ -5,7 +5,7 @@ import { Empanada } from './empanadas-list/Empanada';
 export class CartManagerService {
 
     cartChanged = new EventEmitter<Empanada[]>();
-    private cart: Empanada[];
+    private cart: Empanada[] = [];
 
     addItemstoCart(item: Empanada){
         // en ES6 los '...' indican que el array se debe pasar item a item,

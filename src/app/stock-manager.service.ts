@@ -6,14 +6,17 @@ import { Empanada } from './empanadas-list/Empanada';
 export class StockManagerService {
 
   empanadasChanged = new EventEmitter<Empanada[]>();
+
+  // array inicial
   private empanadas: Empanada[] = [
     {
       image: "assets/img/carnehot.jpg",
       name: "Carne Hot",
       style: "Carne, salsa picante, cebolla y huevo",
       price: 50,
-      stock: 75,
-      sale: false
+      stock: 5,
+      sale: false,
+      quantity: 0
     },
     {
       image: "assets/img/jamonyque.jpg",
@@ -21,7 +24,8 @@ export class StockManagerService {
       style: "Jamón cocido y muuzarella",
       price: 50,
       stock: 50,
-      sale: true
+      sale: true,
+      quantity: 0
     },
     {
       image: "assets/img/verdura.jpg",
@@ -29,7 +33,8 @@ export class StockManagerService {
       style: "Espinaca, cebolla y ajo salteados",
       price: 50,
       stock: 0,
-      sale: false
+      sale: false,
+      quantity: 0
     },
     {
       image: "assets/img/pollito.jpg",
@@ -37,7 +42,8 @@ export class StockManagerService {
       style: "Pollo, salsa picante, verdeo y huevo",
       price: 50,
       stock: 85,
-      sale: false
+      sale: false,
+      quantity: 0
     },
     {
       image: "assets/img/humita.jpg",
@@ -45,7 +51,8 @@ export class StockManagerService {
       style: "Humita casera",
       price: 50,
       stock: 100,
-      sale: true
+      sale: true,
+      quantity: 0
     },
   ];
 

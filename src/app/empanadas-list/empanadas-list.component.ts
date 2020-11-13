@@ -11,10 +11,10 @@ import { Empanada } from './Empanada';
 export class EmpanadasListComponent implements OnInit {
 
   constructor(
-    private stockManager: StockManagerService,
-    private cartManager: CartManagerService) { }
+    private stockManager: StockManagerService) { }
 
   empanadas: Empanada[];
+  currentQuant: number = 0;
 
   ngOnInit() {
     this.empanadas = this.stockManager.getEmpanadas();
@@ -25,6 +25,10 @@ export class EmpanadasListComponent implements OnInit {
         this.empanadas = empanadas;
       }
     )
+  }
+
+  addToCart(empanada: Empanada) {
+    this.stockManager.addToCart(empanada);
   }
 
 }
