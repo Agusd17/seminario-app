@@ -30,6 +30,7 @@ export class EmpanadasListComponent implements OnInit {
 
   addToCart(empanada: Empanada) {
     this.stockManager.addToCart(empanada);
+    empanada.quantity = 0;
   }
 
 }

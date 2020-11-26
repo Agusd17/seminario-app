@@ -1,19 +1,24 @@
-<div *ngIf="noCartFlag; else cartTable">Su carrito está vacío.</div>
+
+
+<div *ngIf="noCartFlag; else cartTable">
+  <h4>Su carrito está vacío.</h4>
+  <hr>
+</div>
 <ng-template #cartTable>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Variedad</th>
-                <th>Cantidad</th>
-                <th>Precio</th>
-            </tr>
-        </thead>
-        <tbody *ngFor="let empanada of carrito">
-            <tr>
-                <td>{{empanada.name | uppercase}}</td>
-                <td>{{empanada.quantity}}</td>
-                <td>{{empanada.price | currency}}</td>
-            </tr>
-        </tbody>
-    </table>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Variedad</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let empanada of carrito">
+      <tr>
+        <td>{{empanada.name | uppercase}}</td>
+        <td>{{empanada.quantity}}</td>
+        <td>{{empanada.price | currency}}</td>
+      </tr>
+    </tbody>
+  </table>
 </ng-template>

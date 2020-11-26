@@ -1,37 +1,38 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-9">
-
-          <h1>Lista de empanadas</h1>
-          <table class="table">
-              <thead>
-                  <tr>
-                      <th>Imagen</th>
-                      <th>Variedad</th>
-                      <th>Ingredientes</th>
-                      <th>Precio</th>
-                      <th>Stock</th>
-                    </tr>
-                </thead>
-                <tbody *ngFor="let empanada of empanadas" [ngClass]="{'sale': empanada.sale, 'no-stock': empanada.stock == 0}">
-                    <tr>
-                        <td><img [src]="empanada.image" [alt]="empanada.name" class="portrait-img"></td>
-                        <td>{{empanada.name | uppercase}}</td>
-                        <td>{{empanada.style}}</td>
-                        <td>{{empanada.price | currency}}</td>
-                        <td *ngIf="empanada.stock==0; else manageQuantity"><span class="badge badge-warning">No hay stock actualmente</span></td>
-                        <ng-template #manageQuantity>
-                            <td>
-                                <app-input-integer [(quantity)]="empanada.quantity" [max]="empanada.stock"></app-input-integer>
-                                <button class="btn btn-success" [disabled]="empanada.quantity === 0" (click)="addToCart(empanada)">Añadir al carrito</button>
-                            </td>
-                        </ng-template>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="col-md-3 well">
-          <app-carrito></app-carrito>
-        </div>
+<div class="container main-container">
+  <div class="row">
+    <div class="col-md-9">
+      <div class="section-title">
+        <h4>Lista de empanadas</h4>
+      </div>
+      <table class="table">
+          <thead>
+              <tr>
+                  <th>Imagen</th>
+                  <th>Variedad</th>
+                  <th>Ingredientes</th>
+                  <th>Precio</th>
+                  <th>Stock</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let empanada of empanadas" [ngClass]="{'sale': empanada.sale, 'no-stock': empanada.stock == 0}">
+                <tr>
+                    <td><img [src]="empanada.image" [alt]="empanada.name" class="portrait-img"></td>
+                    <td>{{empanada.name | uppercase}}</td>
+                    <td>{{empanada.style}}</td>
+                    <td>{{empanada.price | currency}}</td>
+                    <td *ngIf="empanada.stock==0; else manageQuantity"><span class="badge badge-warning">No hay stock actualmente</span></td>
+                    <ng-template #manageQuantity>
+                        <td>
+                            <app-input-integer [(quantity)]="empanada.quantity" [max]="empanada.stock"></app-input-integer>
+                            <button class="btn btn-success" [disabled]="empanada.quantity === 0" (click)="addToCart(empanada)">Añadir al carrito</button>
+                        </td>
+                    </ng-template>
+                </tr>
+            </tbody>
+        </table>
     </div>
+    <div class="col-md-3">
+      <app-carrito></app-carrito>
+    </div>
+  </div>
 </div>
