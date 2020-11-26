@@ -1,13 +1,13 @@
 import { EventEmitter, Injectable } from '@angular/core';
-import { Empanada } from './empanadas-list/Empanada';
+import { CartItem } from './cart-item';
 
 @Injectable({ providedIn: "root"})
 export class CartManagerService {
 
-    cartChanged = new EventEmitter<Empanada[]>();
-    private cart: Empanada[] = [];
+    cartChanged = new EventEmitter<CartItem[]>();
+    private cart: CartItem[] = [];
 
-    addItemstoCart(item: Empanada){
+    addItemstoCart(item: CartItem){
         // en ES6 los '...' indican que el array se debe pasar item a item,
         // y no como un array entero
         this.cart.push(item);

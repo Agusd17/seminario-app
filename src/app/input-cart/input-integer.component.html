@@ -1,0 +1,9 @@
+<div class="input-group">
+    <div class="input-group-prepend">
+        <button class="btn btn-primary btn-sm" (click)="downQuant()">-</button>
+    </div>
+    <input type="text" class="text-center" [(ngModel)]="quantity" (keyup)="chngQuant($event)">
+    <div class="input-group-append">
+        <button class="btn btn-primary btn-sm" (click)="upQuant()">+</button>
+    </div>
+</div>

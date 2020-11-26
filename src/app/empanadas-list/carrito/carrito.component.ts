@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CartItem } from 'src/app/cart-item';
 import { CartManagerService } from 'src/app/cart-manager.service';
-import { Empanada } from '../Empanada';
+import { Empanada } from '../empanada';
 
 @Component({
   selector: 'app-carrito',
@@ -11,7 +12,7 @@ export class CarritoComponent implements OnInit {
 
   constructor(private cartManager: CartManagerService) { }
 
-  carrito: Empanada[];
+  carrito: any[];
   noCartFlag: boolean = true;
 
   ngOnInit(): void {
@@ -19,9 +20,12 @@ export class CarritoComponent implements OnInit {
     this.carrito = [];
 
     this.cartManager.cartChanged.subscribe(
-      (cart: Empanada[]) => {
-        this.carrito = cart;
+      (cartItem: CartItem[]) => {
+        this.carrito = cartItem;
         this.noCartFlag = false;
+        console.log('carrito: ');
+        console.log(this.carrito);
+
       }
     );
   }

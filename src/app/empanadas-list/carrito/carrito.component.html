@@ -1,4 +1,4 @@
-<div *ngIf="noCartFlag; else cartTable">HOluuuuu</div>
+<div *ngIf="noCartFlag; else cartTable">Su carrito está vacío.</div>
 <ng-template #cartTable>
     <table class="table">
         <thead>
@@ -11,7 +11,7 @@
         <tbody *ngFor="let empanada of carrito">
             <tr>
                 <td>{{empanada.name | uppercase}}</td>
-                <td>{{empanada.stock}}</td>
+                <td>{{empanada.quantity}}</td>
                 <td>{{empanada.price | currency}}</td>
             </tr>
         </tbody>

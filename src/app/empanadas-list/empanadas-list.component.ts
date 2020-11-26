@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartManagerService } from '../cart-manager.service';
 import { StockManagerService } from '../stock-manager.service';
-import { Empanada } from './Empanada';
+import { Empanada } from './empanada';
 
 @Component({
   selector: 'app-empanadas-list',
@@ -15,6 +15,7 @@ export class EmpanadasListComponent implements OnInit {
 
   empanadas: Empanada[];
   currentQuant: number = 0;
+  isMaxReached = false;
 
   ngOnInit() {
     this.empanadas = this.stockManager.getEmpanadas();

@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-9">
-          
+
           <h1>Lista de empanadas</h1>
           <table class="table">
               <thead>
@@ -22,7 +22,8 @@
                         <td *ngIf="empanada.stock==0; else manageQuantity"><span class="badge badge-warning">No hay stock actualmente</span></td>
                         <ng-template #manageQuantity>
                             <td>
-                                <app-input-cart [empanada]="empanada"></app-input-cart>
+                                <app-input-integer [(quantity)]="empanada.quantity" [max]="empanada.stock"></app-input-integer>
+                                <button class="btn btn-success" [disabled]="empanada.quantity === 0" (click)="addToCart(empanada)">Añadir al carrito</button>
                             </td>
                         </ng-template>
                     </tr>

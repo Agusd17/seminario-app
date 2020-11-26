@@ -6,9 +6,7 @@ import { AppComponent } from './app.component';
 import { EmpanadasListComponent } from './empanadas-list/empanadas-list.component';
 import { AboutComponent } from './about/about.component';
 import { CarritoComponent } from './empanadas-list/carrito/carrito.component';
-import { StockManagerService } from './stock-manager.service';
-import { CartManagerService } from './cart-manager.service';
-import { InputCartComponent } from './input-cart/input-cart.component';
+import { InputIntegerComponent } from './input-cart/input-integer.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -17,7 +15,7 @@ import { FormsModule } from '@angular/forms';
     EmpanadasListComponent,
     AboutComponent,
     CarritoComponent,
-    InputCartComponent
+    InputIntegerComponent
   ],
   imports: [
     BrowserModule,
